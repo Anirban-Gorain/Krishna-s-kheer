@@ -1,0 +1,103 @@
+/*
+
+-Contents
+
+Ladder container
+Ladder common style
+Ladder parent
+Left right short ladder animation
+Left right too short ladder animation
+
+*/
+
+._ladder_Container
+{
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+._ladder_Common_Style
+{
+
+    display: block;
+    border-radius: 50px;
+
+}
+
+._ladder_Container div
+{
+
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+
+}
+
+._left_Right_Steps_Short
+{
+
+    animation: _left_Right_Steps_Short 6s linear infinite;
+
+}
+
+@keyframes _left_Right_Steps_Short
+{
+
+    0%
+    {
+
+        left: 0px;
+
+    }
+    50%
+    {
+
+        left: 1000px;
+
+    }
+    100%
+    {
+
+        left: 0px;
+
+    }
+
+}
+
+._left_Right_Steps_Too_Short
+{
+
+    animation: _left_Right_Steps_Too_Short 8s linear infinite;
+
+}
+
+@keyframes _left_Right_Steps_Too_Short
+{
+
+    0%
+    {
+
+        left: 0px;
+
+    }
+    50%
+    {
+
+        left: 1185px;
+
+    }
+    100%
+    {
+
+        left: 0px;
+
+    }
+
+}
