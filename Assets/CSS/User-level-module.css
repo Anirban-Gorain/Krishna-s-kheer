@@ -1,0 +1,137 @@
+/* 
+
+-Contents
+
+Font
+Level container
+All child of level container
+Kheer icon
+Indicator image
+Indicator hand
+Remaining monitor
+
+*/
+
+@font-face
+{
+
+    font-family: _fjalla;
+    src: url(/Assets/Fonts/Font-one.ttf);
+
+}
+
+._level_Container
+{
+
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 30vw;
+    height: 10vh;
+    font-family: _fjalla;
+    
+}
+
+._level_Container *
+{
+
+    position: absolute;
+
+}
+
+._level_Container ._kheer_Icon
+{
+
+    top: 3.5px;
+    transform: rotate(20deg);
+    z-index: 1;
+
+}
+
+._level_Container ._indicator_Image
+{
+
+    top: 15px;
+    left: 30px;
+    width: 90%;
+    height: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+._level_Container ._indicator_Hand
+{
+
+    top: 18px;
+    left: 30px;
+    height: 3.5px;
+    width: 88%;
+    background-color: rgb(46, 5, 30);
+    border-radius: 10px;
+    transition: 0.50s linear;
+
+}
+
+._level_Container ._remaining_Monitor
+{
+
+    top: 24px;
+    left: 30px;
+    width: 90%;
+    height: 20px;
+    padding-left: 13px;
+    padding-top: 1px;
+    border-bottom-right-radius: 10px;
+    font-size: 15px;
+    background-color: rgb(255 255 255);
+
+}
+
+._score_Container
+{
+
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    width: 20vw;
+    height: 10vh;
+
+}
+
+._your_Score_Text
+{
+
+    position: absolute;
+    left: 0px;
+    top: -12px;
+    bottom: 0px;
+    margin: auto;
+    padding-left: 10px;
+    width: 70%;
+    height: 30px;
+    background-color: white;
+    font-family: _fjalla;
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 32px;
+
+}
+
+#_score
+{
+
+    position: absolute;
+    left: 170px;
+    top: -10px;
+    bottom: 0px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: auto;
+    font-family: _fjalla;
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 60px;
+    background: linear-gradient(to right, #F37335, #FDC830);
+
+}
