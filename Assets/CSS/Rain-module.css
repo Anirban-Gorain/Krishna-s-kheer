@@ -1,0 +1,50 @@
+/* 
+
+-Contents
+
+Rain container
+Rain
+
+*/
+
+._rain_Container
+{
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+._rain
+{
+
+    width: 100vw;
+    height: 100vh;
+    animation: _rain_Animation .20s linear infinite;
+    pointer-events: none;
+
+}
+
+@keyframes _rain_Animation
+{
+
+    from
+    {
+
+        margin-top: -200px;
+        margin-left: 0;
+
+    }
+    to
+    {
+
+        margin-left: -100px;
+        margin-top: 0px;
+
+    }
+
+}
