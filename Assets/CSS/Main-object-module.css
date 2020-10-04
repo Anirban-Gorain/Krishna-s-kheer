@@ -1,0 +1,37 @@
+/* 
+
+-Contents
+
+Main object
+Combine main object
+Main kheer
+
+*/
+
+._main_Object
+{
+
+    display: block;
+    position: relative;
+    width: 130px;
+    height: 116px;
+    bottom: 100%;
+    /* transition: 0.100s linear; */
+
+}
+
+#_combine_Main_Object
+{
+
+    display: block;
+    width: 130px;
+    height: 116px;
+
+}
+
+._main_Object ._main_Kheer
+{
+
+    display: block;
+
+}
