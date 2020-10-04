@@ -1,8 +1,10 @@
-let _send_On_The_Main_Script_File = false;
+let _send_On_The_Main_Script_File = false ;
 
-class _main_Kheer {
+class _main_Kheer
+{
 
-    _kheer_Initial() {
+    _kheer_Initial()
+    {
 
         // Here will append the main kheer
 
@@ -32,7 +34,8 @@ class _main_Kheer {
 
     }
 
-    _kheer_Up() {
+    _kheer_Up()
+    {
 
         let _next_Ladder = document.querySelector("._ladder_Container").lastChild.previousSibling;
         let _main_Object = document.querySelector("._main_Object");
@@ -40,7 +43,7 @@ class _main_Kheer {
         // Capturing Left of main kheer
 
         let _left = _main_Object.getBoundingClientRect().left;
-
+                
         // Inserting the _main_Kheer at the last of all the elements of the body tag but before all the script tag
 
         let _body = document.querySelector("body");
@@ -58,13 +61,15 @@ class _main_Kheer {
         let _terminate_Point = 80 + 32;
         let _clear_Interval;
 
-        _clear_Interval = setInterval(() => {
+        _clear_Interval = setInterval(() =>
+        {
 
-            if (_terminate_Point >= _bottom_Value) {
-
+            if (_terminate_Point >= _bottom_Value)
+            {
+                
                 clearInterval(_clear_Interval);
 
-                let _fetch_Return_Value = this._is_Perfect_Jump_Of_The_Kheer();
+                let _fetch_Return_Value =  this._is_Perfect_Jump_Of_The_Kheer();
 
                 // capturing the X of the next ladder
 
@@ -73,7 +78,8 @@ class _main_Kheer {
 
                 // Now again putting the main kheer to the next ladder where jumped
 
-                if (_fetch_Return_Value == true) {
+                if(_fetch_Return_Value == true)
+                {
 
                     let _final_Left = (_data_Of_Next_Ladder.left - _data_Of_Main_Object.left);
 
@@ -105,7 +111,8 @@ class _main_Kheer {
 
                 // When the kheer jump will be unsuccessful removing the left right animation from the next ladder
 
-                if (_next_Ladder.classList.length > 0) {
+                if(_next_Ladder.classList.length > 0)
+                {
 
                     /*
                     
@@ -114,9 +121,9 @@ class _main_Kheer {
                     
                     */
 
-                    let _current_Left = _next_Ladder.getBoundingClientRect().left;
-                    _next_Ladder.style.left = _current_Left + "px";
-                    _next_Ladder.style.animationDuration = "0s";
+                   let _current_Left = _next_Ladder.getBoundingClientRect().left;
+                   _next_Ladder.style.left = _current_Left + "px";
+                   _next_Ladder.style.animationDuration = "0s";
 
 
 
@@ -124,26 +131,27 @@ class _main_Kheer {
 
                 // Through of this variable this L/R will send to the _script.js
 
-                _send_On_The_Main_Script_File = (_data_Of_Next_Ladder.left < _data_Of_Main_Object.left) ? "R" : "L";
+               _send_On_The_Main_Script_File = (_data_Of_Next_Ladder.left < _data_Of_Main_Object.left) ? "R" : "L";
 
                 // This bottom setting because to send the main object to the top of the next ladder
 
-                _main_Object.style.bottom = 343 + "px";
+               _main_Object.style.bottom = 343 + "px";
 
-                return 0;
-
+               return 0;
+                
             }
 
             _main_Object.style.bottom = _terminate_Point + "px";
             _terminate_Point += 10;
-
+            
         }, 1);
 
         _main_Object.style.bottom = _bottom_Value;
 
     }
 
-    _is_Perfect_Jump_Of_The_Kheer() {
+    _is_Perfect_Jump_Of_The_Kheer()
+    {
         /*
         
             This function's work is to find the jumping of the Kheer is successful or not
@@ -152,28 +160,30 @@ class _main_Kheer {
 
         let _next_Ladder_Data = document.querySelector("._ladder_Container").lastChild.previousSibling.getBoundingClientRect(); // Let x (Go to the logic.png image on the Game information folder)
         let _the_Main_Kheer_Image_Data = document.querySelector("._main_Kheer").getBoundingClientRect(); // Let y (Go to the logic.png image on the Game information folder)
-
+        
         /*
         
             This down ward IF condition's logic is available on the logic.png image (Go to the logic.png image on the Game information folder)
         
         */
 
-        if ((_next_Ladder_Data.top <= _the_Main_Kheer_Image_Data.bottom) && ((_next_Ladder_Data.left + 100) /* 100 adding because to increasing the accuracy */ < _the_Main_Kheer_Image_Data.right) && ((_next_Ladder_Data.right - 100) /* 100 adding because to decreasing the accuracy */ > _the_Main_Kheer_Image_Data.left)) {
+        if((_next_Ladder_Data.top <= _the_Main_Kheer_Image_Data.bottom) && ((_next_Ladder_Data.left + 100) /* 100 adding because to increasing the accuracy */ < _the_Main_Kheer_Image_Data.right) && ((_next_Ladder_Data.right - 100) /* 100 adding because to decreasing the accuracy */ > _the_Main_Kheer_Image_Data.left))
+        {
 
             // If jumping is successful then returning true
 
             return true;
 
         }
-        else {
+        else
+        {
 
             // If jumping is successful then returning true
 
             return false;
 
         }
-
+    
     }
 
 }
