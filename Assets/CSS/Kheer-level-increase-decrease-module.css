@@ -1,0 +1,85 @@
+/* 
+
+-Contents
+
+Kheer common style
+Kheer drop animation for left most
+Kheer drop animation for right most
+Body
+
+*/
+
+._combine_Main_Object ._kheer_Increasing_Common_Style
+{
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    transition: 5s ease-in-out linear;
+    transform-origin: center;
+
+}
+
+._kheer_Drop_Animation_For_Left_Most
+{
+
+    animation: _kheer_Drop_Left_Most 5s linear forwards;
+
+}
+
+@keyframes _kheer_Drop_Left_Most
+{
+
+    from
+    {
+
+        transform: rotate(0deg);
+        margin-bottom: 0px;
+        
+    }
+    to
+    {
+
+        transform: rotate(-180deg);
+        margin-bottom: -600px;
+        left: -200px;
+        
+    }
+    
+}
+
+._kheer_Drop_Animation_For_Right_Most
+{
+
+    animation: _kheer_Drop_Right_Most 2s linear forwards;
+
+}
+
+@keyframes _kheer_Drop_Right_Most
+{
+
+    from
+    {
+
+        transform: rotate(0deg);
+        margin-bottom: 0px;
+        
+    }
+    to
+    {
+
+        transform: rotate(180deg);
+        margin-bottom: -600px;
+        left: 200px;
+        
+    }
+    
+}
+
+body
+{
+
+   overflow: hidden;
+    
+}
