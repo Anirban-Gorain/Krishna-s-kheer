@@ -1,0 +1,111 @@
+/*
+
+-Contents
+
+Welcome container
+h1
+User name
+Error style
+Error user name
+Play
+Error button
+
+*/
+
+._welcome_Container
+{
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 4;
+    background-image: url(/Assets/Images/Welcome-page-image.png);
+    overflow: hidden;
+    /* clip-path: circle(50% at 50% 50%); */
+
+
+}
+
+._welcome_Container h1
+{
+
+    display: block;
+    position: absolute;
+    top: 76px;
+    right: 264px;
+    font-family: _fjalla;
+    /* letter-spacing: 2px; */
+
+}
+
+._user_Name
+{
+
+    position: absolute;
+    right: 398px;
+    top: 174px;
+    width: 300px;
+    height: 30px;
+    padding: 5px;
+    border: 0.5px solid black;
+    outline: 0px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+
+}
+
+._error_Style
+{
+
+    position: absolute;
+    font-style: italic;
+    font-weight: bolder;
+    color: red;
+
+}
+
+._error_User_Name
+{
+
+    top: 204px;
+    right: 245px;
+    visibility: hidden;
+
+}
+
+._play
+{
+
+    position: absolute;
+    top: 250px;
+    right: 499px;
+    width: 200px;
+    height: 50px;
+    font-size: 2rem;
+    outline: 0px;
+    border: 0.1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.100s ease-in-out;
+
+}
+
+._play:hover
+{
+
+    background-color: black;
+    color: white;
+
+}
+
+._error_Button
+{
+
+    visibility: hidden;
+    top: 300px;
+    right: 547.5px;
+
+}
