@@ -187,7 +187,3 @@ class _main_Kheer
     }
 
 }
-
-let _kheer_Test = new _main_Kheer;
-
-_kheer_Test._kheer_Initial();

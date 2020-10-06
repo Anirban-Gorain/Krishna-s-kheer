@@ -32,5 +32,3 @@ class _score
     }
 
 }
-
-let _test = new _score;
