@@ -1,0 +1,117 @@
+/* 
+
+-Contents
+
+Coin container
+Complement container
+Complement text
+Complement removing animation
+
+*/
+
+._coin_Container
+{
+
+    position: relative;
+    left: 0px;
+    right: 0px;
+    bottom: 82px;
+    margin: auto;
+    width: 70px;
+    height: 70px;
+    background-image: url(/Assets/Images/Coin.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: _coin_Rotate 1s linear infinite;
+
+}
+
+@keyframes _coin_Rotate
+{
+
+    from
+    {
+
+        transform: rotateY(0deg);
+        
+    }
+    to
+    {
+
+        transform: rotateY(-360deg);
+
+    }
+
+}
+
+._complement_Container
+{
+
+    position: absolute;
+    top: 145px;
+    left: 0px;
+    width: 100%;
+    height: 150px;
+    font-size: 0px;
+    line-height: 150px;
+    text-align: center;
+    letter-spacing: 20px;
+    font-family: _fjalla;
+    /* font-weight: bold; */
+
+}
+
+._complement_Container span
+{
+
+    animation: _text_Animation 1.2s linear;
+
+}
+
+@keyframes _text_Animation
+{
+
+    0%
+    {
+
+        color: rgba(255, 255, 255, 0);
+        font-size: 150px;
+
+    }
+    50%
+    {
+
+        color: rgb(255, 255, 255);
+        font-size: 100px;
+
+    }
+    70%
+    {
+
+        color: rgb(31, 185, 70);
+        font-size: 150px;
+
+    }
+    80%
+    {
+
+        color: rgb(23, 190, 17);
+
+    }
+    100%
+    {
+
+        font-size: 0px;
+        opacity: 0;
+
+    }
+
+}
+
+._coin_Removing_Animation
+{
+
+    transition: 0.200s;
+    opacity: 0;
+
+}
