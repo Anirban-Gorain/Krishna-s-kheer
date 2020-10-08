@@ -177,6 +177,10 @@ let _start_Game_Store =  function _start_Game(_event_Object)
 
                 _background_Object._move_Background_Image_With_Animation(230);
 
+                // Updating the score
+
+                _score_Object._update_Score((parseInt(document.querySelector("#_score").innerText)) + 1);
+
             }
             else
             {
