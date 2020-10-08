@@ -97,7 +97,7 @@ class _kheer_Level
             }, 200);
 
         }
-        else if(_create_Or_Remove === "R")
+        else if(_create_Or_Remove === "R" && _create_Or_Remove != null)
         {
 
             let _combine_Main_Object = document.querySelector("._combine_Main_Object");
@@ -130,6 +130,8 @@ class _kheer_Level
             }, 200);
 
         }
+
+        console.log(_create_Or_Remove + "-> ");
 
     }
     
