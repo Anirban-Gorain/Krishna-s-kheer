@@ -131,8 +131,6 @@ class _kheer_Level
 
         }
 
-        console.log(_create_Or_Remove + "-> ");
-
     }
     
     _drop(_left_Or_Right_Most_Animation)
