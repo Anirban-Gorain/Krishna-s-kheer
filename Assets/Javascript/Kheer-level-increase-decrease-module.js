@@ -52,6 +52,8 @@ class _kheer_Level
 
         _image.classList.add("_kheer_Increasing_Common_Style");
 
+        _image.style.transition = "1s";
+
         if(_count_Nodes_Quantity == 1)
         {
 
@@ -97,7 +99,7 @@ class _kheer_Level
             }, 200);
 
         }
-        else if(_create_Or_Remove === "R" && _create_Or_Remove != null)
+        else if(_create_Or_Remove === "R")
         {
 
             let _combine_Main_Object = document.querySelector("._combine_Main_Object");
@@ -108,27 +110,21 @@ class _kheer_Level
                 return "No image remains to delete";
 
             }
-
-            let _opacity = 1;
-            
-            let _clear_interval = setInterval(() => 
+            else
             {
 
-                if(_opacity <= 0)
-                {
+                _combine_Main_Object.firstChild.style.opacity = 0;
 
-                    clearInterval(_clear_interval);
+                setTimeout(() =>
+                {
+                
                     _combine_Main_Object.removeChild(_element);
 
-                    return 0;
+                }, 1000);
 
-                }
+            }
 
-                _combine_Main_Object.firstChild.style.opacity = _opacity;
-                _opacity -= 0.1;
-                
-            }, 200);
-
+            
         }
 
     }
