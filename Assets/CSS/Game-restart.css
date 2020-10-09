@@ -1,0 +1,96 @@
+/* 
+
+-Contents
+
+Main pop up
+Score monitor
+Restart button
+Close button
+
+*/
+
+._main_Pop_Up
+{
+
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    z-index: 5;
+    padding: 200px;
+    font-family: _fjalla;
+    background-color: rgb(254, 255, 243);
+    transition: 1s;
+    color: rgb(254 255 243);
+
+}
+
+._main_Pop_Up ._score_Monitor
+{
+
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    font-size: 2.5rem;
+    background-color: rgba(255, 255, 255, 0);
+    background: linear-gradient( to right, #f32170, #ff6b08, #cf23cf, #eedd44); 
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text; 
+
+}
+
+._main_Pop_Up ._restart_Button
+{
+
+    position: relative;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(28, 206, 5);
+    display: inline-block;
+    left: 270px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.100s linear;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 50px;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.100);
+
+}
+
+._main_Pop_Up ._restart_Button:hover
+{
+
+    background-color: rgb(26, 197, 4);
+    color: rgb(0, 0, 0);
+
+}
+
+._main_Pop_Up ._close_Button
+{
+
+    position: relative;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(255, 0, 0);
+    display: inline-block;
+    left: 285px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.100s linear;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 50px;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.100);
+    
+
+}
+
+._main_Pop_Up ._close_Button:hover
+{
+
+    background-color: rgb(241, 0, 0);
+    color: rgb(0, 0, 0);
+
+}

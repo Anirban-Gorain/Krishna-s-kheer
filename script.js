@@ -17,6 +17,7 @@ let _coin_Object = new _coin;
 let _main_Kheer_Object = new _main_Kheer;
 let _kheer_Level_Object = new _kheer_Level;
 let _score_Object = new _score;
+let _game_Restart_Object = new _game_Restart;
 
 /* Initial necessary methods calling */
 
@@ -38,10 +39,10 @@ let _remaining_Round = 10;
 let _Count_Each_10_Seconds = 10;
 let _can_Need_To_Start_Timer_Again = true;
 
-let _start_Game_Store =  function _start_Game(_event_Object)
+let _start_Game_Store =  function (_event_Object)
 {
 
-    if ((_event_Object.key === " " || _event_Object.key === "ArrowUp") && _can_User_Press_Keys)
+    if ((_event_Object.key === " " || _event_Object.key === "ArrowUp") && _can_User_Press_Keys === true)
     {
 
         // For, User should not able to move the main kheer for 1 second
@@ -103,17 +104,26 @@ let _start_Game_Store =  function _start_Game(_event_Object)
 
                     // And, Also not need t detect the key event
 
-                    document.removeEventListener("keypress", _start_Game(_event_Object));
+                    document.removeEventListener("keydown", _start_Game_Store);
 
                     // Drop animation of the kheer
 
                     _kheer_Level_Object._drop(_send_On_The_Main_Script_File);
 
+                    // Restarting the game
+
+                    setTimeout(() =>
+                    {
+
+                        _game_Restart_Object._create_Pop_up();
+                        
+                    }, 1000 * 2.5);
+
                     return 0;
 
                 }
 
-                if(_Count_Each_10_Seconds === 0)
+                if(_Count_Each_10_Seconds === 0 && _remaining_Round != 0)
                 {
 
                     _Count_Each_10_Seconds = 10;
@@ -144,11 +154,11 @@ let _start_Game_Store =  function _start_Game(_event_Object)
         
         */
 
-       _main_Kheer_Object._kheer_Up();
+        _main_Kheer_Object._kheer_Up();
 
-       // Coin collision detection
+        // Coin collision detection
 
-    //    _coin_Object._coin_Collision_Detection();
+        // _coin_Object._coin_Collision_Detection();
 
         setTimeout(() =>
         {
@@ -158,56 +168,69 @@ let _start_Game_Store =  function _start_Game(_event_Object)
             {
 
                 _Count_Each_10_Seconds = 10;
-
+                
                 // _can_User_Press_Keys = true;
-
+                
                 // Creating a new ladder
-
+                
                 _ladder_Object._create_Ladder();
-
+                
                 // Adding coin
-
+                
                 // _coin_Object._add_Coin();
-
+                
                 // Removing the down most ladder
-
+                
                 _ladder_Object._delete_Down_Most();
-
+                
                 // Shifting the background from top to bottom
-
+                
                 _background_Object._move_Background_Image_With_Animation(230);
-
+                
                 // Updating the score
-
+                
                 _score_Object._update_Score((parseInt(document.querySelector("#_score").innerText)) + 1);
-
+                
             }
             else
             {
-
+                
                 // Control here mean the game is over for showing score 0 and round is 0
-
+                
                 document.querySelector("#_remaining_Monitor").innerHTML = "You left only " + 0 + " Round " + "And " + 0 + " second";
-
+                
                 // And, Also clearing this interval for not need to count the second further
 
                 clearInterval(_interval_Handel_Who_Control_The_Remaining_Time);
 
                 // And, Also clearing this interval for not need to count that after how much time user will able to click again
-
+                
                 clearInterval(_interval_Handel_Who_Control_Time_Limit_For_Key_Pressing);
-
+                
                 // And, Also not need t detect the key event
-
-                document.removeEventListener("keypress", _start_Game(_event_Object));
-
+                
+                document.removeEventListener("keydown", _start_Game_Store);
+                
                 // Preventing to come here again
-
+                
                 _can_User_Press_Keys = false;
 
                 // Drop animation of the kheer
 
                 _kheer_Level_Object._drop(_send_On_The_Main_Script_File);
+
+                // Resetting the kheer level
+
+                _score_Object._increase_Indicator_Hand(0);
+
+                // Restarting the game
+
+                setTimeout(() =>
+                {
+
+                    _game_Restart_Object._create_Pop_up();
+                    
+                }, 1000 * 2.5);
 
                 return 0;
                 
@@ -225,14 +248,14 @@ let _start_Game_Store =  function _start_Game(_event_Object)
 
 const _play = document.querySelector("._play");
 
-// _play.addEventListener("click", () => 
+_play.addEventListener("click", () => 
 {
 
-    // let _return_From_Validation = _validation();
+    let _return_From_Validation = _validation();
 
     // If the validation is successful
 
-    // if(_return_From_Validation === true)
+    if(_return_From_Validation === true)
     {
 
         // Removing the validation page after 500 ms
@@ -248,4 +271,4 @@ const _play = document.querySelector("._play");
 
     }
 
-}//);
+});
