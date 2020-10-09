@@ -25,6 +25,15 @@ class _game_Restart
         // After _main_Object element will append pop up
 
         let _main_Object = document.querySelector("._score_Container");
+
+        // Removing the rain
+
+        if(document.querySelector("._rain_Container").childElementCount > 0)
+        {
+
+            document.querySelector("._rain_Container").removeChild(document.querySelector("._rain_Container").firstChild);
+
+        }
         
         // Creating the pop up
 
@@ -104,6 +113,8 @@ class _game_Restart
         {
 
             _bird_Nature_Audio.play();
+
+            _one_Time_Enter = true;
 
             // Starting the game again
 

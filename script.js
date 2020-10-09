@@ -18,6 +18,7 @@ let _main_Kheer_Object = new _main_Kheer;
 let _kheer_Level_Object = new _kheer_Level;
 let _score_Object = new _score;
 let _game_Restart_Object = new _game_Restart;
+let _rain_Object = new _rain;
 
 /* Initial necessary methods calling */
 
@@ -40,6 +41,9 @@ let _Count_Each_10_Seconds = 10;
 let _can_Need_To_Start_Timer_Again = true;
 let _bird_Nature_Audio = new Audio("/Assets/Audio/Bird-nature-sound.mp3");
 _bird_Nature_Audio.loop = true;
+let _one_Time_Enter = true;
+let _rain_Start_Or_Stop = "_start";
+let _interval_Handel_Control_Who_Control_Rain_Functionality;
 
 let _start_Game_Store =  function (_event_Object)
 {
@@ -57,6 +61,41 @@ let _start_Game_Store =  function (_event_Object)
             _can_User_Press_Keys = true;
             
         }, 1300);
+
+        /* Rain functionality */
+
+        if(_one_Time_Enter === true)
+        {
+
+            _one_Time_Enter = false;
+
+            _interval_Handel_Control_Who_Control_Rain_Functionality = setInterval(() =>
+            {
+
+                if(_rain_Start_Or_Stop === "_start")
+                {
+
+                    _rain_Object._create_Rain();
+                    _rain_Start_Or_Stop = "_stop";
+
+                }
+                else
+                {
+
+                    _rain_Object._stop_Animation(0);
+                    _rain_Start_Or_Stop = "_start"
+                    
+                    // setTimeout(() =>
+                    // {
+
+                        
+                    // }, 10 * 1000);
+
+                }
+                
+            }, 10 * 1000);
+
+        }
 
         /* 
         
@@ -99,6 +138,10 @@ let _start_Game_Store =  function (_event_Object)
                     // And, Also clearing this interval for not need to count that after how much time user will able to click again
 
                     clearInterval(_interval_Handel_Who_Control_Time_Limit_For_Key_Pressing);
+
+                    // And, Also to remove the rain
+
+                    clearInterval(_interval_Handel_Control_Who_Control_Rain_Functionality);
 
                     // Preventing to come here again
 
@@ -204,6 +247,10 @@ let _start_Game_Store =  function (_event_Object)
                 // And, Also clearing this interval for not need to count the second further
 
                 clearInterval(_interval_Handel_Who_Control_The_Remaining_Time);
+
+                // And, Also to remove the rain
+
+                clearInterval(_interval_Handel_Control_Who_Control_Rain_Functionality);
 
                 // And, Also clearing this interval for not need to count that after how much time user will able to click again
                 
