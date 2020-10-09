@@ -6,7 +6,7 @@ class _game_Restart
 
         // Pausing the bird nature sound
 
-        // _bird_Nature_Sound.pause();
+        _bird_Nature_Audio.pause();
 
         // Ladder animation can be fast counter
 
@@ -102,6 +102,8 @@ class _game_Restart
 
         _restart_Button.addEventListener("click", () =>
         {
+
+            _bird_Nature_Audio.play();
 
             // Starting the game again
 

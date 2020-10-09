@@ -38,6 +38,8 @@ let _interval_Handel_Who_Control_The_Remaining_Time;
 let _remaining_Round = 10;
 let _Count_Each_10_Seconds = 10;
 let _can_Need_To_Start_Timer_Again = true;
+let _bird_Nature_Audio = new Audio("/Assets/Audio/Bird-nature-sound.mp3");
+_bird_Nature_Audio.loop = true;
 
 let _start_Game_Store =  function (_event_Object)
 {
@@ -257,6 +259,10 @@ _play.addEventListener("click", () =>
 
     if(_return_From_Validation === true)
     {
+
+        /* The reason to play the audio here is this block will execute once for just playing the audio here */
+
+        _bird_Nature_Audio.play();
 
         // Removing the validation page after 500 ms
 
